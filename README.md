@@ -33,40 +33,14 @@
 	
 # Fill Data :
 
-  - Php version : 7.32 64 Bit
+  - npm version : 7.12.1,
      
-  - Framework : Laravel 8.31.0 </br>
-	
-  - Database selection : mysql mariaDB 10.1.37 </br>
-	
-  - Database Configuration used : root = "root", </br> 
+  - node version : 16.1.0 </br>
   
-    password = "", port = "3306", database name = "alamsutera", host = "" </br>
-	
-  - Library dipake : JWT Token Tymon </br>	
+  - material ui version : 4.12 </br>
   
-  - Keterangan : Laravel menggunakan token untuk authentifikasi <br>
-    
-	Begitu login maka user akan dapat token yang akan </br>
+  - Next version : 10.2 </br>
 	
-	dimasukkan otomatis ke bearer token untuk auth nya sehingga </br>
+  - React version : 17.0.2 </br>
 	
-	penggunaan tidak bisa sembarangan.</br>
-	
-	Dibangun 4 data master :  role, user, barang, customer </br>
-	
-	dan 1 data order transaksi </br>
-	
-	Untuk role, bisa memilih menu otorisasi di assign </br>
-	
-	Untuk data user, field email : unique <br>
-	
-	Untuk data customer, field name , code : unique <br>
-	
-	Untuk data barang, field name , code : unique <br>
-	
-	Untuk order barang, item bisa banyak, auto total & sum<br>
-	
-	Untuk role superadmin : semua menu unlock <br>
-	
-	Untuk role admin : menu barang, order <br>
+  - Paljs Framework : 1.1</br>
