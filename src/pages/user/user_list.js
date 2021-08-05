@@ -172,7 +172,7 @@ export default function User_list() {
   }
 
   const delItem = async() => {
-	  await fetch("https://dennisalamsutera.herokuapp.com/api/user"+FormData.id, {
+	  await fetch("https://dennisalamsutera.herokuapp.com/api/user/"+FormData.id, {
       method: "DELETE",
       headers: {"Authorization" : "Bearer "+storeLogin.getState().authLogin}
 				}).then(res => res.json())
