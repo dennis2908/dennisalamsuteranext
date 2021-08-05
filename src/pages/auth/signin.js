@@ -47,10 +47,10 @@ export default function Signin() {
                       
                     }	
                     
-                  
+                    router.push("/dashboard")		
                 });
 			
-			router.push("../")			
+				
 	
 	   e.preventDefault();	
 	 
