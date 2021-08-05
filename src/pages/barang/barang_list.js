@@ -59,7 +59,7 @@ const columns = [
     format: (value) => value.toLocaleString('en-US'),
   },
   { id: 'priceM', align: 'right',label: 'Price', minWidth: 170 },
-  { id: 'desc', label: 'Description', minWidth: 120 },
+  { id: 'desc', label: 'Description', minWidth: 190 },
 ];
 
 function btn(){
