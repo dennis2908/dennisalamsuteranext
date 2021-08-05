@@ -124,7 +124,7 @@ export default function Barang_list() {
 
     await DoShowLin()
 
-	  await fetch("https://alamsuteradennis.herokuapp.com/api/barang", {
+	  await fetch("https://dennisalamsutera.herokuapp.com/api/barang", {
       method: "GET",
       headers: {"Authorization" : "Bearer "+storeLogin.getState().authLogin}
 				}).then(res => res.json())
@@ -158,7 +158,7 @@ export default function Barang_list() {
   }
 
   const delItem = async() => {
-	  await fetch("https://alamsuteradennis.herokuapp.com/api/barang/"+FormData.id, {
+	  await fetch("https://dennisalamsutera.herokuapp.com/api/barang/"+FormData.id, {
       method: "DELETE",
       headers: {"Authorization" : "Bearer "+storeLogin.getState().authLogin}
 				}).then(res => res.json())
@@ -173,7 +173,7 @@ export default function Barang_list() {
   const saveUpdateData = (e) => {
 	  e.preventDefault()
 	  if(typeof FormData.id === 'undefined'){
-	  fetch("https://alamsuteradennis.herokuapp.com/api/barang", {
+	  fetch("https://dennisalamsutera.herokuapp.com/api/barang", {
 						  method: "POST",
 						  headers: {
 							  'Accept': 'application/json',
@@ -192,7 +192,7 @@ export default function Barang_list() {
 	  }						
 	  else{
 		  
-		  fetch("https://alamsuteradennis.herokuapp.com/api/barang/"+FormData.id, {
+		  fetch("https://dennisalamsutera.herokuapp.com/api/barang/"+FormData.id, {
 						  method: "PUT",
 						  headers: {
 							  'Accept': 'application/json',

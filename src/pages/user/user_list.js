@@ -122,7 +122,7 @@ export default function User_list() {
 	},[]);		
   const loadData = async(e) => {
     await DoShowLin()
-	  await fetch("https://alamsuteradennis.herokuapp.com/api/user", {
+	  await fetch("https://dennisalamsutera.herokuapp.com/api/user", {
       method: "GET",
       headers: {"Authorization" : "Bearer "+storeLogin.getState().authLogin}
 				}).then(res => res.json())
@@ -158,7 +158,7 @@ export default function User_list() {
 
   const dataRole = async(e) => {
     await DoShowLin() 
-	  await fetch("https://alamsuteradennis.herokuapp.com/api/role", {
+	  await fetch("https://dennisalamsutera.herokuapp.com/api/role", {
       method: "GET",
       headers: {"Authorization" : "Bearer "+storeLogin.getState().authLogin}
 				}).then(res => res.json())
@@ -172,7 +172,7 @@ export default function User_list() {
   }
 
   const delItem = async() => {
-	  await fetch("https://alamsuteradennis.herokuapp.com/api/user/"+FormData.id, {
+	  await fetch("https://dennisalamsutera.herokuapp.com/api/user/"+FormData.id, {
       method: "DELETE",
       headers: {"Authorization" : "Bearer "+storeLogin.getState().authLogin}
 				}).then(res => res.json())
@@ -187,7 +187,7 @@ export default function User_list() {
   const saveUpdateData = (e) => {
 	  e.preventDefault()
 	  if(typeof FormData.id === 'undefined'){
-	  fetch("https://alamsuteradennis.herokuapp.com/api/user", {
+	  fetch("https://dennisalamsutera.herokuapp.com/api/user", {
 						  method: "POST",
 						  headers: {
 							  'Accept': 'application/json',
@@ -205,7 +205,7 @@ export default function User_list() {
 	  }						
 	  else{
 		  
-		  fetch("https://alamsuteradennis.herokuapp.com/api/user/"+FormData.id, {
+		  fetch("https://dennisalamsutera.herokuapp.com/api/user/"+FormData.id, {
 						  method: "PUT",
 						  headers: {
 							  'Accept': 'application/json',
