@@ -156,7 +156,7 @@ export default function Order_list() {
 	}, []);		
   const loadData = async(e) => {
 	  await DoShowLin()
-	  await fetch("https://dennisalamsutera.herokuapp.com/api/order", {
+	  await fetch("http://127.0.0.1:8441/api/order", {
 		  method: "GET",
 		  headers: {"Authorization" : "Bearer "+storeLogin.getState().authLogin}
 				}).then(res => res.json())
@@ -189,7 +189,7 @@ export default function Order_list() {
   }
   
   const dataSel = async(e) => {
-	  await fetch("https://dennisalamsutera.herokuapp.com/api/barang", {
+	  await fetch("http://127.0.0.1:8441/api/barang", {
 		  method: "GET",
 		  headers: {"Authorization" : "Bearer "+storeLogin.getState().authLogin}
 				}).then(res => res.json())
@@ -203,7 +203,7 @@ export default function Order_list() {
   }
   
   const dataCus = async(e) => {
-	  await fetch("https://dennisalamsutera.herokuapp.com/api/customer", {
+	  await fetch("http://127.0.0.1:8441/api/customer", {
 		  method: "GET",
 		  headers: {"Authorization" : "Bearer "+storeLogin.getState().authLogin}
 				}).then(res => res.json())
@@ -217,7 +217,7 @@ export default function Order_list() {
   }
 
   const delItemOrder = async() => {
-	await fetch("https://dennisalamsutera.herokuapp.com/api/order/"+FormData.id, {
+	await fetch("http://127.0.0.1:8441/api/order/"+FormData.id, {
 	method: "DELETE",
 	headers: {"Authorization" : "Bearer "+storeLogin.getState().authLogin}
 			  }).then(res => res.json())
@@ -264,7 +264,7 @@ export default function Order_list() {
 			FormDt.arr_qty = arr_qty.substring(0, arr_qty.length - 1);
 			console.log(FormDt);
 	  if(typeof FormData.id === 'undefined'){
-	  fetch("https://dennisalamsutera.herokuapp.com/api/order", {
+	  fetch("http://127.0.0.1:8441/api/order", {
 						  method: "POST",
 						  headers: {
 							  'Accept': 'application/json',
@@ -283,7 +283,7 @@ export default function Order_list() {
 	  }						
 	  else{
 		  
-		  fetch("https://dennisalamsutera.herokuapp.com/api/order/"+FormData.id, {
+		  fetch("http://127.0.0.1:8441/api/order/"+FormData.id, {
 						  method: "PUT",
 						  headers: {
 							  'Accept': 'application/json',
@@ -367,7 +367,7 @@ export default function Order_list() {
   };
   
   const databarangSel = async() => {
-	  let data = await fetch("https://dennisalamsutera.herokuapp.com/api/barang", {
+	  let data = await fetch("http://127.0.0.1:8441/api/barang", {
 		  method: "GET"
 				}).then(res => res.json());
 	  

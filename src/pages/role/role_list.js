@@ -127,7 +127,7 @@ export default function Role_list() {
 	}, []);		
   const loadData = async(e) => {
     await DoShowLin()
-	  await fetch("https://dennisalamsutera.herokuapp.com/api/role", {
+	  await fetch("http://127.0.0.1:8441/api/role", {
       method: "GET",
       headers: {"Authorization" : "Bearer "+storeLogin.getState().authLogin}
 				}).then(res => res.json())
@@ -158,7 +158,7 @@ export default function Role_list() {
   }
 
   const delItem = async() => {
-	  await fetch("https://dennisalamsutera.herokuapp.com/api/role/"+FormData.id, {
+	  await fetch("http://127.0.0.1:8441/api/role/"+FormData.id, {
       method: "DELETE",
       headers: {"Authorization" : "Bearer "+storeLogin.getState().authLogin}
 				}).then(res => res.json())
@@ -174,7 +174,7 @@ export default function Role_list() {
 	  e.preventDefault()
 	  console.log(FormData)
 	  if(typeof FormData.id === 'undefined'){
-	  fetch("https://dennisalamsutera.herokuapp.com/api/role", {
+	  fetch("http://127.0.0.1:8441/api/role", {
 						  method: "POST",
 						  headers: {
 							  'Accept': 'application/json',
@@ -193,7 +193,7 @@ export default function Role_list() {
 	  }						
 	  else{
 		  
-		  fetch("https://dennisalamsutera.herokuapp.com/api/role/"+FormData.id, {
+		  fetch("http://127.0.0.1:8441/api/role/"+FormData.id, {
 						  method: "PUT",
 						  headers: {
 							  'Accept': 'application/json',
@@ -224,7 +224,7 @@ export default function Role_list() {
 				role_assign += k[1]+","
 		  })
       FormData.role_assign = role_assign.substring(0, role_assign.length - 1);
-      fetch("https://dennisalamsutera.herokuapp.com/api/role/assign/"+FormData.id, {
+      fetch("http://127.0.0.1:8441/api/role/assign/"+FormData.id, {
 						  method: "PUT",
 						  headers: {
 							  'Accept': 'application/json',
