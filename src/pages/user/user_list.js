@@ -187,7 +187,7 @@ export default function User_list() {
   const saveUpdateData = (e) => {
 	  e.preventDefault()
 	  if(typeof FormData.id === 'undefined'){
-	  fetch("https://dennisalamsutera.herokuapp.com/api/user/", {
+	  fetch("https://dennisalamsutera.herokuapp.com/api/user", {
 						  method: "POST",
 						  headers: {
 							  'Accept': 'application/json',
@@ -201,12 +201,11 @@ export default function User_list() {
 								(result) => {
 									loadData()
 									handleClose()
-									
 							});
 	  }						
 	  else{
 		  
-		  fetch("https://dennisalamsutera.herokuapp.com/api/user/"+FormData.id, {
+		  fetch("https://dennisalamsutera.herokuapp.com/api/user"+FormData.id, {
 						  method: "PUT",
 						  headers: {
 							  'Accept': 'application/json',
