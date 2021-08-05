@@ -205,7 +205,7 @@ export default function User_list() {
 	  }						
 	  else{
 		  
-		  fetch("https://dennisalamsutera.herokuapp.com/api/user"+FormData.id, {
+		  fetch("https://dennisalamsutera.herokuapp.com/api/user/"+FormData.id, {
 						  method: "PUT",
 						  headers: {
 							  'Accept': 'application/json',
