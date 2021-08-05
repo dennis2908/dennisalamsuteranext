@@ -107,7 +107,7 @@ export default function User_list() {
   
   const router = useRouter();
 
-  React.useEffect(() => {
+  React.useEffect(async() => {
     var roleAss = Object.assign({},storeLogin.getState().authRoleAssign);
     let cekmuser = Object.values(roleAss).find((obj) => {
       return obj === "muser"
@@ -115,14 +115,14 @@ export default function User_list() {
     if(!cekmuser)
         router.push("/dashboard")
 
-    loadData();
-    dataRole();
+    await dataRole();
+    await loadData();
 	  
 
-	}, []);		
+	},[]);		
   const loadData = async(e) => {
     await DoShowLin()
-	  await fetch("https://dennisalamsutera.herokuapp.com/api/user/", {
+	  await fetch("https://dennisalamsutera.herokuapp.com/api/user", {
       method: "GET",
       headers: {"Authorization" : "Bearer "+storeLogin.getState().authLogin}
 				}).then(res => res.json())
@@ -141,9 +141,6 @@ export default function User_list() {
 					console.log(result.result)
           setrows(result.result);
           }
-          else if(result.status){
-            router.push("/logout")
-          }
 					
 				
       });
@@ -160,6 +157,7 @@ export default function User_list() {
   }
 
   const dataRole = async(e) => {
+    await DoShowLin() 
 	  await fetch("https://dennisalamsutera.herokuapp.com/api/role", {
       method: "GET",
       headers: {"Authorization" : "Bearer "+storeLogin.getState().authLogin}
@@ -169,11 +167,12 @@ export default function User_list() {
           console.log(result.result)
 					setselrole(result.result);
 			});
+      await DoHideLin()
 	 
   }
 
   const delItem = async() => {
-	  await fetch("https://dennisalamsutera.herokuapp.com/api/user/"+FormData.id, {
+	  await fetch("https://dennisalamsutera.herokuapp.com/api/user"+FormData.id, {
       method: "DELETE",
       headers: {"Authorization" : "Bearer "+storeLogin.getState().authLogin}
 				}).then(res => res.json())

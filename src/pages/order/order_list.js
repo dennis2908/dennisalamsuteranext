@@ -138,7 +138,7 @@ export default function Order_list() {
   
   const router = useRouter(); 
   
-  React.useEffect(() => {
+  React.useEffect(async() => {
 	  
 	  var roleAss = Object.assign({},storeLogin.getState().authRoleAssign);
       let cektorder = Object.values(roleAss).find((obj) => {
@@ -146,14 +146,13 @@ export default function Order_list() {
       });
       if(!cektorder)
 		router.push("/dashboard")
-		
-	  loadData();
-	  dataSel();
-	  dataCus();
 	  brgBrgRef.current = brgBrgRef.current.slice(0, countBrg);
 	  brgPriceRef.current = brgPriceRef.current.slice(0, countBrg);
 	  brgTotalRef.current = brgTotalRef.current.slice(0, countBrg);
 	  brgQtyRef.current = brgQtyRef.current.slice(0, countBrg);
+	  await dataSel();
+	  await dataCus();
+	  await loadData();
 	}, []);		
   const loadData = async(e) => {
 	  await DoShowLin()
