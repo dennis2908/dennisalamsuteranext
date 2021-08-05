@@ -1,6 +1,6 @@
 # Instalasi dan running project di localhost:
 
->>>Front End : </br>
+# Front End : </br>
 
 - install npm 7.12.1, node v16.1.0, next
 - git clone https://github.com/dennis2908/dennisalamsuteranext </br>
@@ -44,3 +44,6 @@
   - React version : 17.0.2 </br>
 	
   - Paljs Framework : 1.1</br>
+  
+  
+# Back End : https://github.com/dennis2908/dennisalamsuteralaravel </br>	
