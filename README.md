@@ -12,6 +12,10 @@
 
   https://alamsuteradennis.herokuapp.com
   
+# Waktu Pengerjaan Backend + Frontend Termasuk deploy online : </br>
+
+  4 hari
+  
 # Notes :
 
   - Login : </br>
