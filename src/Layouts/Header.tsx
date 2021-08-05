@@ -50,10 +50,6 @@ const SelectStyled = styled(Select)`
   min-width: 150px;
 `;
 
-const SelectStyleBil = styled(Select)`
-  min-width: 250px;
-`;
-
 interface HeaderProps {
   toggleSidebar: () => void;
   theme: {
