@@ -9,11 +9,11 @@ export default function Logout() {
 	useEffect(() => {
 		
 	const Dologout = async () => {
-	  console.log(233213132123);
-	  await storeLogin.dispatch({ type: 'CHANGE_STATE', payload: { authLogin:"" } })
+	  localStorage.removeItem("nextJS");
+    await storeLogin.dispatch({ type: 'CHANGE_STATE', payload: { authLogin:"",authUserName:"",authName:"",authRoleName:"",authRoleAssign:"" } })
 	 // console.log(storeLogin.getState());
 	  router.push('/auth/signin');
-	
+	  
 		
   }
     Dologout();

@@ -1,6 +1,6 @@
 import { Button } from '@paljs/ui/Button';
 import { InputGroup } from '@paljs/ui/Input';
-import React from 'react';
+import React,{ useEffect } from 'react';
 
 //import { useHistory } from 'react-router-dom'
 
@@ -16,7 +16,10 @@ export default function Signin() {
   const router = useRouter();	 
   
   //const history = useHistory()
-	  
+  useEffect(async() => {
+      await localStorage.removeItem("nextJS");
+      await storeLogin.dispatch({ type: 'CHANGE_STATE', payload: { authLogin:"",authUserName:"",authName:"",authRoleName:"",authRoleAssign:"" } })
+    }, []);
 
   const SubmitForm = async(e) => {
 	  e.preventDefault();	
@@ -27,7 +30,7 @@ export default function Signin() {
     console.log(formData)
 	
 	 
-    await fetch("https://dennisalamsutera.herokuapp.com/api/user/login", {
+    await fetch("https://alamsuteradennis.herokuapp.com/api/user/login", {
 						  method: "POST",
 						  headers: {
 							  'Accept': 'application/json',
@@ -38,16 +41,13 @@ export default function Signin() {
 								}).then(res => res.json())
 							  .then(
                   (result) => {
+
                     if(result.result){
-						localStorage.removeItem("nextJS");
-						 
-						 if(!authLogin)
-                           storeLogin.dispatch({ type: 'CHANGE_STATE', payload: { authLogin:result.token,authUserName:e.target.username.value,authName:result.result.name,authRoleName:result.result.role_name,authRoleAssign:result.result.role_assign } })
-                       //localStorage.setItem('username', username);
+						            storeLogin.dispatch({ type: 'CHANGE_STATE', payload: { authLogin:result.token,authUserName:e.target.username.value,authName:result.result.name,authRoleName:result.result.role_name,authRoleAssign:result.result.role_assign } })
+                       location.href="/dashboard"	
                       
                     }	
-                    
-                    router.push("/dashboard")		
+                  
                 });
 			
 				
