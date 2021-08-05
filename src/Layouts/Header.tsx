@@ -12,7 +12,6 @@ import User from '@paljs/ui/User';
 import { breakpointDown } from '@paljs/ui/breakpoints';
 import { storeMenu } from 'components/redux/storeMenu';
 import {storeLogin} from 'components/redux/storeLogin';
-import {genFunctions} from 'genFunctions/genFunctions';
 const HeaderStyle = styled.div`
   display: flex;
   width: 100%;
