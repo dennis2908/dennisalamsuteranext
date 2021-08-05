@@ -1,4 +1,4 @@
-import React,{ useEffect }  from 'react';
+import { useEffect }  from 'react';
 import {storeLogin} from 'components/redux/storeLogin';
 import { useRouter } from 'next/router';
 export default function Logout() {

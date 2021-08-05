@@ -10,7 +10,6 @@ import { Actions } from '@paljs/ui/Actions';
 import ContextMenu from '@paljs/ui/ContextMenu';
 import User from '@paljs/ui/User';
 import { breakpointDown } from '@paljs/ui/breakpoints';
-import { storeMenu } from 'components/redux/storeMenu';
 import {storeLogin} from 'components/redux/storeLogin';
 const HeaderStyle = styled.div`
   display: flex;
@@ -77,36 +76,11 @@ const Header: React.FC<HeaderProps> = (props) => {
   }, [username,capitalizeFirstLetter,rolename]);
   
   const router = useRouter();
-  const ChangebilMenu = (e) => {
-	  //console.log(e.value)
-	  storeMenu.dispatch({ type: 'CHANGE_STATE', payload: { addmenu:e.value } })
-	  router.push('/');
-	  
-  };
   
-  function capitalizeFirstLetter(string){
+  function capitalizeFirstLetter(string:any){
 	  return string.charAt(0).toUpperCase() + string.slice(1);
   }
-  const bilMenu = () => [
-    {
-      value: 'ganjil_genap',
-      label: (
-        <Label>
-          <EvaIcon name="droplet" options={{ fill: '#a6c1ff' }} />
-          Bilangan Ganjil Genap
-        </Label>
-      ),
-    },
-    {
-      value: 'komposit_prima',
-      label: (
-        <Label>
-          <EvaIcon name="droplet" options={{ fill: '#192038' }} />
-          Bilangan Komposit Prima
-        </Label>
-      ),
-    },
-  ];
+
   const themeOptions = () => [
     {
       value: 'default',

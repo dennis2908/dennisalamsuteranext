@@ -1,7 +1,7 @@
 {
-  "name": "AdminContactUser",
+  "name": "DMD",
   "private": true,
-  "description": "Admin dashboard Contact User",
+  "description": "Data Inventory",
   "version": "0.1.0",
   "author": "Dennis",
   "dependencies": {
@@ -12,6 +12,7 @@
     "@paljs/icons": "1.0.5",
     "@paljs/ui": "1.1.1",
     "@tinymce/tinymce-react": "3.12.3",
+    "@types/react-router-dom": "^5.1.8",
     "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.12.0",
     "local-storage": "^2.0.0",
@@ -32,10 +33,11 @@
   ],
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "start": "next start",
     "build": "next build",
-    "start": "next start --port ${PORT-3000}",
-    "prepare": "husky install"
+    "dev": "next dev",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run dev",
+    "build:tailwind": "tailwind build styles/index.css -o styles/tailwind.css"
   },
   "repository": {
     "type": "git",

@@ -91,4 +91,4 @@ const reducer = (state = initialState, action) => {
 const storeLogin = createStore(reducer)
 
 
-export {storeLogin}
+export  {storeLogin}

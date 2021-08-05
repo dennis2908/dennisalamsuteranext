@@ -1,11 +1,11 @@
 import { MenuItemType } from '@paljs/ui/types';
 
-import { storeLogin } from 'components/redux/storeLogin';
+import {storeLogin} from 'components/redux/storeLogin';
 	
-const items = () => {  
+const itemsData = () => {  
   var roleAss = Object.assign({},storeLogin.getState().authRoleAssign);
   
-  let mrole = {}
+  let mrole = {} as MenuItemType;
   let cekmrole = Object.values(roleAss).find((obj) => {
     return obj === "mrole"
   });
@@ -22,7 +22,7 @@ const items = () => {
       ],
       }
   
-  let muser = {}
+  let muser = {} as MenuItemType;
   let cekmuser = Object.values(roleAss).find((obj) => {
      return obj === "muser"
   });
@@ -38,7 +38,7 @@ const items = () => {
            }
           ],
           }    
-  let mcustomer = {}
+  let mcustomer = {} as MenuItemType;
   let cekmcustomer = Object.values(roleAss).find((obj) => {
              return obj === "mcustomer"
           });
@@ -54,7 +54,7 @@ const items = () => {
                   ],
                   }         
 
-  let mbarang = {}
+  let mbarang = {} as MenuItemType;
   let cekmbarang = Object.values(roleAss).find((obj) => {
     return obj === "mbarang"
   });
@@ -71,7 +71,7 @@ const items = () => {
       ],
       }
 
-  let torder = {}
+  let torder = {} as MenuItemType;
   let cektorder = Object.values(roleAss).find((obj) => {
         return obj === "torder"
   });
@@ -112,20 +112,13 @@ const itemsData: MenuItemType[] = [
     title: 'TRANSAKSI',
     group: true,
   },
-  {
-    title: 'Order',
-    icon: { name: 'star-outline' },
-    children: [
-      {
-        title: 'List Order',
-        link: { href: '/order/order_list' },
-      }
-    ],
-  }
+  torder
 ];
 
 return itemsData;
 }
+
+const items: MenuItemType[] = itemsData()
 
 
 export default items;
