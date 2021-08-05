@@ -25,17 +25,11 @@
     "redux": "^4.1.0",
     "styled-components": "5.2.3"
   },
-  "keywords": [
-    "react",
-    "component",
-    "styled",
-    "oah"
-  ],
-  "license": "MIT",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next",
     "build": "next build",
-    "start": "next start -p $PORT"
+    "start": "next start --port ${PORT-3000}",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@types/node": "15.0.1",
