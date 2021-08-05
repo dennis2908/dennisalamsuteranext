@@ -13,7 +13,7 @@ import { useRouter } from 'next/router';
 
 export default function Signin() {
 
-
+  const router = useRouter();	 
   
   //const history = useHistory()
 	  
@@ -26,7 +26,7 @@ export default function Signin() {
     formData.password = e.target.password.value
     console.log(formData)
 	
-	const router = useRouter();	  
+	 
     await fetch("https://dennisalamsutera.herokuapp.com/api/user/login", {
 						  method: "POST",
 						  headers: {
