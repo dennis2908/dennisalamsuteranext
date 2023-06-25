@@ -7,14 +7,6 @@
 - buka cmd dan lalu ketik yarn install </br>
 - setelah selesai install, ketik  yarn dev <br>
 - buka localhost:3000<br>
-	
-# Bukti running : (project frontend + backend ini yg sudah di deploy online)
-
-  https://alamsuteradennis.herokuapp.com
-  
-# Waktu Pengerjaan Backend + Frontend Termasuk deploy online : </br>
-
-  4 hari
   
 # Notes :
 
@@ -48,6 +40,4 @@
   - React version : 17.0.2 </br>
 	
   - Paljs Framework : 1.1</br>
-  
-  
 # Back End : https://github.com/dennis2908/dennisalamsuteralaravel </br>	
