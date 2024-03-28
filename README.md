@@ -25,19 +25,5 @@
 	Passsword : dina88 </br>
 	
 	Role : Admin </br>  
-	
-	
-# Fill Data :
 
-  - npm version : 7.12.1,
-     
-  - node version : 16.1.0 </br>
-  
-  - material ui version : 4.12 </br>
-  
-  - Next version : 10.2 </br>
-	
-  - React version : 17.0.2 </br>
-	
-  - Paljs Framework : 1.1</br>
 # Back End : https://github.com/dennis2908/dennisalamsuteralaravel </br>	
